@@ -21,7 +21,7 @@ namespace GameForProgramming.GameElements
         public static double sizeCoeff;
         private static Size startSize;
         
-        public Shark()
+        public static void LoadShark()
         {
             sprite = new Sprite2D(new Point(500, 500), new Size(80, 31), Resources.Shark);
             position = sprite.position;
@@ -31,9 +31,7 @@ namespace GameForProgramming.GameElements
             Form form = Form.ActiveForm;
             form.KeyDown += Form_KeyDown;
             form.KeyUp += Form_KeyUp;
-            
         }
-
 
         public static void OnUpdate()
         {
@@ -44,13 +42,13 @@ namespace GameForProgramming.GameElements
             collideRectangle.Width = sprite.size.Width;
             collideRectangle.Height = sprite.size.Height;
         }
-        private void Form_KeyUp(object sender, KeyEventArgs e)
+        private static void Form_KeyUp(object sender, KeyEventArgs e)
         {
             dirX = 0;
             dirY = 0;
         }
 
-        private void Form_KeyDown(object sender, KeyEventArgs e)
+        private  static void Form_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {

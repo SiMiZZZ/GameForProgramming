@@ -23,7 +23,8 @@ namespace GameForProgramming.Scenes
         static Sprite2D ScorePanel = new Sprite2D(new Point(0, 0), new Size(340, 165), Resources.ScorePanel);
         static Label ScoreLabel = Core.CreateLabel(140, 50, 40, 60, "Score:");
         static Label ScoreResultLabel = Core.CreateLabel(100, 50, 180, 65, Score.ToString());
-        
+        Button ShopButton = Core.CreateButton(200, 100, 1700, 0, "", Resources.ShopButton);
+
 
 
         public static List<NPCFish> Fishes = new List<NPCFish>();
@@ -34,13 +35,14 @@ namespace GameForProgramming.Scenes
 
         public override void OnLoad()
         {
-            var mainShark = new Shark();
+            Shark.LoadShark();
             RegisterObject(BackGround);
             RegisterObject(Shark.sprite);
             RegisterObject(ScorePanel);
             RegisterObject(ScoreLabel);
             RegisterObject(ScoreResultLabel);
-            
+            RegisterObject(ShopButton);
+            ShopButton.Click += (object sender, EventArgs e) => Score++;
             CreateFishes(10);
         }
 

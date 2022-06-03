@@ -123,6 +123,16 @@ namespace GameForProgramming.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ShopButton {
+            get {
+                object obj = ResourceManager.GetObject("ShopButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StopButton {
             get {
                 object obj = ResourceManager.GetObject("StopButton", resourceCulture);
